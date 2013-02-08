@@ -6,7 +6,7 @@
     <% if @try_files -%>
     try_files <% try_files.each do |try| -%> <%= try %> <% end -%>;
     <% end -%>
-    index <% index_files.each do |i| %> <%= i %> <% end %>; 
+    index <% index_files.each do |i| %> <%= i %> <% end %>;
 <% if @location_cfg_append -%><% location_cfg_append.each do |key,value| -%>
     <%= key %> <%= value %>;
 <% end -%><% end -%>
