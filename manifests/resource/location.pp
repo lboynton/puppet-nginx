@@ -91,7 +91,7 @@ define nginx::resource::location(
   } elsif ($stub_status != undef) {
     $content_real = template('nginx/vhost/vhost_location_stub_status.erb')
   } elsif ($fastcgi != undef) {
-    $content_real = template('nginx/vhost/vhost_location_fastcgi.erb')
+    $content_real = template('nginx/vhost/vhost_location_fastcgi.erb')
   } else {
     $content_real = template('nginx/vhost/vhost_location_directory.erb')
   }
