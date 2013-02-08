@@ -100,7 +100,7 @@ define nginx::resource::location(
   if ($vhost == undef) {
     fail('Cannot create a location reference without attaching to a virtual host')
   }
-  if (($www_root == undef) and ($proxy == undef) and ($location_alias == undef) and ($stub_status == undef) and ($fastcgi == undef)) {
+  if (($www_root == undef) and ($proxy == undef) and ($location_alias == undef) and ($stub_status == undef) and ($fastcgi == undef)) {
     fail('Cannot create a location reference without a www_root, proxy, location_alias or stub_status defined or fastcgi defined')
   }
   if (($www_root != undef) and ($proxy != undef)) {
