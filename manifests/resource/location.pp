@@ -12,7 +12,7 @@
 #                              with nginx::resource::upstream
 #   [*proxy_read_timeout*]   - Override the default the proxy read timeout value of 90 seconds
 #   [*fastcgi*]              - location of fastcgi (host:port)
-#   [*fastcgi_params*]       - optional alternative fastcgi_params file to use
+#   [*fastcgi_params*]       - hash of fastcgi_params
 #   [*fastcgi_script*]       - optional SCRIPT_FILE parameter
 #   [*ssl*]                  - Indicates whether to setup SSL bindings for this location.
 #   [*ssl_only*]	     - Required if the SSL and normal vHost have the same port.
@@ -58,7 +58,7 @@ define nginx::resource::location(
   $proxy                = undef,
   $proxy_read_timeout   = $nginx::params::nx_proxy_read_timeout,
   $fastcgi            = undef,
-  $fastcgi_params     = '/etc/nginx/fastcgi_params',
+  $fastcgi_params     = undef,
   $fastcgi_script     = undef,
   $ssl                  = false,
   $ssl_only		= false,

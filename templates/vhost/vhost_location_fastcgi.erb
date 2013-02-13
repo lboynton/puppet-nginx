@@ -1,7 +1,10 @@
   location <%= location %> {
-    include <%= fastcgi_params %>;
+    include fastcgi_params;
     fastcgi_pass <%= fastcgi %>;
     <% unless fastcgi_script == :undef %>
     fastcgi_param SCRIPT_FILENAME <%= fastcgi_script %>;
     <% end %>
+    <% if @fastcgi_params -%><% fastcgi_params.each do |key,value| -%>
+    fastcgi_param <%= key %> <%= value %>;
+    <% end -%><% end -%>
   }
